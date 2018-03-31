@@ -10,6 +10,8 @@ student assignments (essays, essays, theses, homework).
 - Install Docker and Docker-compose
 - Run docker-compose up
 - Open http://localhost:30080/plagzap/library_update.php in your browser to 
-add existing documents to the document library (optional step)
+add existing documents to the document library (optional step) or use the 
+import_docs.sh script to bulk import local files (e.g. all files from a 
+specific folder).
 - Open http://localhost:30080/plagzap/library_search.php in your browser to 
 check new new documents for plagiarism (against existing documents)

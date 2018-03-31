@@ -1,0 +1,23 @@
+version: "3"
+services:
+  web:
+    container_name: plagzap_web
+    build: ./web/docker
+    ports:
+      - "30080:80"
+      - "30443:443"
+    volumes:
+     - ./web/www/:/var/www/
+    depends_on:
+      - solr
+  solr:
+    container_name: plagzap_solr
+    image: solr
+    ports:
+     - "38983:8983"
+    volumes:
+      - ./solr/data/:/opt/solr/server/solr/mycores/
+      - ./solr/initdb/:/docker-entrypoint-initdb.d/
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
